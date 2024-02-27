@@ -26,18 +26,19 @@ function MyDropzone({ setImgUrl }: any): JSX.Element {
     })
 
     return (
-        <div {...getRootProps()} className={isDragActive ? "bg-zinc-100 border-4 border-green-500 border-dashed m-4 h-52 flex flex-col items-center justify-center" : "bg-zinc-100 border-2 border-gray-500 border-dashed m-4 h-52 flex flex-col items-center justify-center"}>
+        <div {...getRootProps()} className={isDragActive ? "dark:bg-[#4a5769] bg-zinc-100 border-2 border-green-500 border-dashed m-4 h-52 flex flex-col items-center justify-center" : "dark:bg-[#4a5769] bg-zinc-100 border-2 dark:border-gray-50 border-gray-500 border-dashed m-4 h-52 flex flex-col items-center justify-center dark:active:bg-[#343d4a] active:bg-zinc-200"}>
             <input {...getInputProps()} />
             {
                 isDragActive ?
                     <div className='flex flex-col items-center justify-center'>
                         <FaFileCircleCheck className='text-7xl text-green-500 opacity-50' />
-                        <p className='text-center py-4 text-green-700'>Suelta tu archivo</p>
+                        <h2 className='font-OverPass text-3xl text-gray-900 dark:text-gray-50 py-2 font-bold'>Suelta aqui</h2>
+                        <p className='text-center text-green-700 dark:text-green-500'>Suelta tu archivo para analizar</p>
                     </div> :
                     <div className='flex flex-col items-center justify-center'>
-                        <FaFileMedical className='text-7xl text-gray-500 opacity-50' />
-                        <h2 className='font-OverPass text-3xl text-gray-900 py-2 font-bold'>Arrastra aqui</h2>
-                        <p className='text-center text-gray-700'>Toca o arrastra tus archivos aqui</p>
+                        <FaFileMedical className='text-7xl text-gray-500 dark:text-gray-50 opacity-50' />
+                        <h2 className='font-OverPass text-3xl text-gray-900 dark:text-gray-50 py-2 font-bold'>Arrastra aqui</h2>
+                        <p className='text-center text-gray-700 dark:text-gray-200'>Toca o arrastra tus archivos aqui</p>
                     </div>
             }
         </div>

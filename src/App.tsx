@@ -7,9 +7,9 @@ function App() {
   
   return (
     <>
-      <div className="font-OverPass">
+      <div className='[]'>
         <Hero />
-        <main className='grid place-content-center sm:grid-cols-2 md:grid-cols-1 md:place-items-center my-4 gap-4'>
+        <main className='dark:bg-[#1b1514] bg-zinc-50 grid place-content-center sm:grid-cols-2 md:grid-cols-1 md:place-items-center gap-4 gap-y-8 py-4'>
           {
             imgsUrl.map((item: string, index: number) => (
               <Card item={item} index={index} />

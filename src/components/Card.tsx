@@ -5,7 +5,7 @@ function Card({ item, index }) {
   type item = string
   type index = number
   return (
-    <div key={index} className='bg-zinc-50 rounded shadow-2xl h-max w-max flex flex-col md:flex-row p-4'>
+    <div key={index} className='dark:bg-[#25252d] bg-zinc-50 rounded dark:shadow-gray-900/50 shadow-xl h-max w-max flex flex-col md:flex-row p-4'>
       <img src={item} alt="" className='rounded h-56 w-56 object-cover' />
       <div className='h-full flex flex-col'>
         <section className='p-4 m-2'>
@@ -14,11 +14,11 @@ function Card({ item, index }) {
               console.log(data);
               return (
                 <div className='flex items-center justify-center gap-4'>
-                  <div className="h-12 w-12 p-4 rounded-full shadow-2xl" style={{ backgroundColor: data ? data : "No encontrado" }}></div>
+                  <div className="h-12 w-12 p-4 rounded-full shadow-lg dark:shadow-zinc-900" style={{ backgroundColor: data ? data : "No encontrado" }}></div>
                   <div>
                     <Toaster expand={true} />
                     <CopyToClipboard text={data ? data : "No hay"} onCopy={() => toast("Copiado al portapapeles")}>
-                      <button className='bg-zinc-50 rounded p-1 text-center shadow-md hover:bg-zinc-200 transition-colors'>{data ? data : "No found"}</button>
+                      <button className='dark:bg-[#1b1514] bg-zinc-50 rounded dark:text-gray-100 dark:hover:bg-zinc-800 p-1 text-center shadow-md hover:bg-zinc-200 transition-colors'>{data ? data : "No found"}</button>
                     </CopyToClipboard >
                   </div>
                 </div>
@@ -35,42 +35,42 @@ function Card({ item, index }) {
               return (
                 <>
                   <div className='flex justify-start md:flex-col gap-0 md:gap-2 p-1 items-center md:justify-center'>
-                    <div className="h-12 w-12 p-4 rounded-full shadow-xl border-black" style={{ backgroundColor: data ? color1 : "transparent" }}></div>
+                    <div className="h-12 w-12 p-4 rounded-full shadow-lg dark:shadow-zinc-900 border-black" style={{ backgroundColor: data ? color1 : "transparent" }}></div>
                     <Toaster />
                     <CopyToClipboard text={data ? color1 : "No encontrado"} onCopy={() => {
                       toast("Copiado al portapapeles")
                       console.log("Copy");
                       
                     }}>
-                      <button className='bg-zinc-50 rounded ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? color1 : "No found"}</button>
+                      <button className='dark:bg-[#1b1514] bg-zinc-50 rounded dark:text-gray-100 dark:hover:bg-zinc-800 ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? color1 : "No found"}</button>
                     </CopyToClipboard >
                   </div>
                   <div className='flex justify-start md:flex-col gap-0 md:gap-2 p-1 items-center md:justify-center'>
-                    <div className="h-12 w-12 p-4 rounded-full shadow-xl border-black" style={{ backgroundColor: data ? data[1] : "transparent" }}></div>
+                    <div className="h-12 w-12 p-4 rounded-full shadow-lg dark:shadow-zinc-900 border-black" style={{ backgroundColor: data ? data[1] : "transparent" }}></div>
                     <Toaster expand={true} />
                     <CopyToClipboard text={data ? data[1] : "No hay"} onCopy={() => toast("Copiado al portapapeles")}>
-                      <button className='bg-zinc-50 rounded ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? data[1] : "No found"}</button>
+                      <button className='dark:bg-[#1b1514] bg-zinc-50 rounded dark:text-gray-100 dark:hover:bg-zinc-800 ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? data[1] : "No found"}</button>
                     </CopyToClipboard >
                   </div>
                   <div className='flex justify-start md:flex-col gap-0 md:gap-2 p-1 items-center md:justify-center'>
-                    <div className="h-12 w-12 p-4 rounded-full shadow-xl border-black" style={{ backgroundColor: data ? data[2] : "transparent" }}></div>
+                    <div className="h-12 w-12 p-4 rounded-full shadow-lg dark:shadow-zinc-900 border-black" style={{ backgroundColor: data ? data[2] : "transparent" }}></div>
                     <Toaster expand={true} />
                     <CopyToClipboard text={data ? data[2] : "No hay"} onCopy={() => toast("Copiado al portapapeles")}>
-                      <button className='bg-zinc-50 rounded ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? data[2] : "No found"}</button>
+                      <button className='dark:bg-[#1b1514] bg-zinc-50 rounded dark:text-gray-100 dark:hover:bg-zinc-800 ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? data[2] : "No found"}</button>
                     </CopyToClipboard >
                   </div>
                   <div className='flex justify-start md:flex-col gap-0 md:gap-2 p-1 items-center md:justify-center'>
-                    <div className="h-12 w-12 p-4 rounded-full shadow-xl border-black" style={{ backgroundColor: data ? data[3] : "transparent" }}></div>
+                    <div className="h-12 w-12 p-4 rounded-full shadow-lg dark:shadow-zinc-900 border-black" style={{ backgroundColor: data ? data[3] : "transparent" }}></div>
                     <Toaster expand={true} />
                     <CopyToClipboard text={data ? data[3] : "No hay"} onCopy={() => toast("Copiado al portapapeles")}>
-                      <button className='bg-zinc-50 rounded ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? data[3] : "No found"}</button>
+                      <button className='dark:bg-[#1b1514] bg-zinc-50 rounded dark:text-gray-100 dark:hover:bg-zinc-800 ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? data[3] : "No found"}</button>
                     </CopyToClipboard >
                   </div>
                   <div className='flex justify-start md:flex-col gap-0 md:gap-2 p-1 items-center md:justify-center'>
-                    <div className="h-12 w-12 p-4 rounded-full shadow-xl border-black" style={{ backgroundColor: data ? data[4] : "transparent" }}></div>
+                    <div className="h-12 w-12 p-4 rounded-full shadow-lg dark:shadow-zinc-900 border-black" style={{ backgroundColor: data ? data[4] : "transparent" }}></div>
                     <Toaster expand={true} />
                     <CopyToClipboard text={data ? data[4] : "No hay"} onCopy={() => toast("Copiado al portapapeles")}>
-                      <button className='bg-zinc-50 rounded ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? data[4] : "No found"}</button>
+                      <button className='dark:bg-[#1b1514] bg-zinc-50 rounded dark:text-gray-100 dark:hover:bg-zinc-800 ml-4 p-1 text-center shadow-md hover:bg-zinc-100 hover:translate-y-0.5 transition-all'>{data ? data[4] : "No found"}</button>
                     </CopyToClipboard >
                   </div>
                 </>
