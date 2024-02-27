@@ -1,16 +1,17 @@
 import { useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
-import { FaArrowUpFromBracket, FaRegCircleCheck } from 'react-icons/fa6'
-function MyDropzone({ setImageURL }: any): JSX.Element {
+import { FaFileMedical, FaFileCircleCheck } from 'react-icons/fa6'
+function MyDropzone({ setImgUrl }: any): JSX.Element {
 
     const onDrop = useCallback((acceptedFiles: File[]) => {
         acceptedFiles.forEach((file) => {
             const reader = new FileReader();
             reader.onload = () => {
-
-                setImageURL((prevState: string) => [...prevState, reader.result]);
+                setImgUrl(reader.result);
             };
             reader.readAsDataURL(file);
+            console.log(file);
+            
         })
     }, []);
 
@@ -25,17 +26,18 @@ function MyDropzone({ setImageURL }: any): JSX.Element {
     })
 
     return (
-        <div {...getRootProps()} className={isDragActive ? "bg-zinc-100 border-4 border-green-500 border-dashed m-4 h-52 flex flex-col items-center justify-center" : "bg-zinc-100 border-4 border-sky-500 border-dashed m-4 h-52 flex flex-col items-center justify-center"}>
+        <div {...getRootProps()} className={isDragActive ? "bg-zinc-100 border-4 border-green-500 border-dashed m-4 h-52 flex flex-col items-center justify-center" : "bg-zinc-100 border-2 border-gray-500 border-dashed m-4 h-52 flex flex-col items-center justify-center"}>
             <input {...getInputProps()} />
             {
                 isDragActive ?
                     <div className='flex flex-col items-center justify-center'>
-                        <FaRegCircleCheck className='text-7xl text-green-500 opacity-50' />
+                        <FaFileCircleCheck className='text-7xl text-green-500 opacity-50' />
                         <p className='text-center py-4 text-green-700'>Suelta tu archivo</p>
                     </div> :
                     <div className='flex flex-col items-center justify-center'>
-                        <FaArrowUpFromBracket className='text-5xl text-sky-500 opacity-50' />
-                        <p className='text-center py-4 text-sky-700'>Toca o arrastra tus archivos aqui</p>
+                        <FaFileMedical className='text-7xl text-gray-500 opacity-50' />
+                        <h2 className='font-OverPass text-3xl text-gray-900 py-2 font-bold'>Arrastra aqui</h2>
+                        <p className='text-center text-gray-700'>Toca o arrastra tus archivos aqui</p>
                     </div>
             }
         </div>
